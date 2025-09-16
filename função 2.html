@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar Idade</title>
+</head>
+<body>
+    <h1>Verifique se você é maior de idade</h1>
+    <input type="number" id="idade" placeholder="Digite sua idade">
+    <button onclick="verificar()">Verificar</button>
+
+    <script src="funcaoRosângela.js"></script>
+    <script>
+        function verificar() {
+            const idade = document.getElementById('idade').value;
+            verificarIdade(Number(idade));
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário simples</title>
+</head>
+<body>
+  <h2>Cadastro</h2>
+  <form id="formulario">
+    <label>Nome: <input type="text" id="nome"></label><br><br>
+    <label>Idade: <input type="number" id="idade"></label><br><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    // 1. Pegar o formulário
+    const form = document.getElementById("formulario");
+
+    // 2. Escutar quando o formulário for enviado
+    form.addEventListener("submit", function(evento) {
+      evento.preventDefault(); // impede o recarregamento da página
+
+      // 3. Pegar os valores digitados
+      const nome = document.getElementById("nome").value;
+      const idade = parseInt(document.getElementById("idade").value);
+
+      // 4. Validar e mostrar mensagens
+      if (nome.length > 3 && idade > 18) {
+        alert("Cadastro realizado com sucesso!");
+      } else {
+        alert("Nome deve ter mais de 3 letras e idade maior que 18.");
+      }
+    });
+  </script>
+</body>
+</html>
